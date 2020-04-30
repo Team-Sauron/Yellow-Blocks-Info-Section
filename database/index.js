@@ -1,20 +1,20 @@
-var mongoose = require('mongoose');
-var mongoDB = 'mongodb://localhost:27017/smego';
-var Product = require('./product');
-// var dataGen = require('./dataGen');
+const mongoose = require('mongoose');
+const Product = require('./product');
 
-mongoose.connect(mongoDB, { useNewUrlParser: true, useUnifiedTopology: true}, (err, result) => {
+const mongoDB = 'mongodb://localhost:27017/smego';
+
+mongoose.connect(mongoDB, { useNewUrlParser: true, useUnifiedTopology: true }, (err) => {
   if (err) {
     throw err;
   } else {
+    // eslint-disable-next-line no-console
     console.log('connected to mongoose!');
   }
 });
 
-//Get the default connection
-var connection = mongoose.connection;
+const { connection } = mongoose;
 
-//Bind connection to error event (to get notification of connection errors)
+// eslint-disable-next-line no-console
 connection.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
-module.exports = connection;
+module.exports = { connection, Product };
