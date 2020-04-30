@@ -1,23 +1,22 @@
 import React from 'react';
 
 class Info extends React.Component {
-
-  constructor (props) {
+  // eslint-disable-next-line no-useless-constructor
+  constructor(props) {
     super(props);
   }
 
-  componentDidMount () {
+  componentDidMount() {
 
   }
 
-  render () {
+  render() {
     return (
       <div>
         <h3> Product </h3>
       </div>
     );
   }
-
 }
 
 export default Info;

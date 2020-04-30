@@ -1,10 +1,10 @@
-var mongoose = require('mongoose');
-var Schema = mongoose.Schema;
+const mongoose = require('mongoose');
+
+const { Schema } = mongoose;
 
 
-//Define a schema
-var productSchema = new Schema({
-  ID: {type: Number, unique: true},
+const productSchema = new Schema({
+  ID: { type: Number, unique: true },
   Brand: String,
   Name: String,
   Price: Number,
@@ -14,7 +14,7 @@ var productSchema = new Schema({
   Ages: String,
   Pieces: Number,
   VIP_Points: Number,
-  Reviews: Number
+  Reviews: Number,
 });
 
 module.exports = mongoose.model('product', productSchema);
