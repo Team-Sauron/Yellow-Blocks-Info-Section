@@ -1,5 +1,6 @@
 // import
 var express = require('express');
+var db = require('./../database');
 
 // init
 var app = express();
