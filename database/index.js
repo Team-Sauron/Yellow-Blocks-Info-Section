@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 var mongoDB = 'mongodb://localhost:27017/smego';
 var Product = require('./product');
-// var dataGen = require('./dataGen');
+var dataGen = require('./dataGen');
 
 mongoose.connect(mongoDB, { useNewUrlParser: true, useUnifiedTopology: true}, (err, result) => {
   if (err) {

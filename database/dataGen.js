@@ -1,15 +1,16 @@
 var faker = require('faker');
 var Product = require('./product');
 var fs = require('fs');
-// var path = require('path');
+var path = require('path');
 
-var genAdd = (file) => {
+var genAdd = (object) => {
+  console.log('in genadd')
+  var newProduct = new Product(JSON.parse(object));
   newProduct.save(function (err, result) {
     if (err) {
       console.log('oop');
     } else {
       console.log('submitted entry');
-      console.log(result);
     }
   });
 };
@@ -35,20 +36,21 @@ var genSave = () => {
     });
 };
 
-for (var i = 0; i < 5000; i++) {
-  genSave();
-}
+// for (var i = 0; i < 5000; i++) {
+  // genSave();
+// }
 
-fs.readdir('./database/genData', function(err, items) {
+// fs.readdir('./database/data', function(err, items) {
 
-  for (var item of items) {
-    fs.readFile('./database/genData/' + item, (err, entry) => {
-      if (err) {
-        throw err;
-      } else {
-        console.log(entry.toString());
-      }
-    });
-  }
+//   for (var item of items) {
 
-});
+//     fs.readFile('./database/data/' + item, (err, entry) => {
+//       if (err) {
+//         throw err;
+//       } else {
+//         genAdd(entry.toString());
+//       }
+//     });
+//   }
+
+// });
