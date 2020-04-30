@@ -13,7 +13,7 @@ var genInsert = (number) => {
   if (number > 0) {
     var product = {
       ID: faker.random.number(),
-      Brand: faker.lorem.word(),
+      Brand: faker.lorem.word().toUpperCase(),
       Name: faker.lorem.sentence(),
       Price: faker.random.number() % 799,
       Rating: (faker.random.number() % 5),
@@ -35,7 +35,7 @@ var genInsert = (number) => {
         // throw err;
       } else {
         if (number % 1000 === 0) {
-          console.log('error, ', number);
+          console.log('success, ', number);
         }
         genInsert(number-1);
       }
