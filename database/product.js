@@ -4,7 +4,7 @@ var Schema = mongoose.Schema;
 
 //Define a schema
 var productSchema = new Schema({
-  ID: Number,
+  ID: {type: Number, unique: true},
   Brand: String,
   Name: String,
   Price: Number,
@@ -16,6 +16,5 @@ var productSchema = new Schema({
   VIP_Points: Number,
   Reviews: Number
 });
-
 
 module.exports = mongoose.model('product', productSchema);
