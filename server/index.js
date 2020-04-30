@@ -20,12 +20,13 @@ app.use(express.json());
 
 app.get('/api/info-section', (req, res) => {
 
-  db.find( (err, result) => {
+  db.Product.find( (err, result) => {
+    console.log('grabbing products');
     if (err) {
       console.log('error');
     }
     res.end(JSON.stringify(result));
-  });
+  }).limit(1000)
 
 });
 
