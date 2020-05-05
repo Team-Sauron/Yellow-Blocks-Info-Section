@@ -1,4 +1,5 @@
 import React from 'react';
+// eslint-disable-next-line import/extensions
 import Half from './halfStar.jsx';
 
 class Stars extends React.Component {

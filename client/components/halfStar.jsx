@@ -37,6 +37,6 @@ class Half extends React.Component {
       </div>
     );
   }
-};
+}
 
 export default Half;

@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
-import Stars from './stars.jsx'
+// eslint-disable-next-line import/extensions
+import Stars from './stars.jsx';
 
 class Product extends React.Component {
   // eslint-disable-next-line no-useless-constructor
@@ -8,6 +9,7 @@ class Product extends React.Component {
     super(props);
     const { product } = this.props;
     this.state = {
+      // eslint-disable-next-line react/no-unused-state
       product,
     };
   }
