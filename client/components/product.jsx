@@ -2,6 +2,10 @@
 import React from 'react';
 // eslint-disable-next-line import/extensions
 import Stars from './stars.jsx';
+// eslint-disable-next-line import/extensions
+import Wishlist from './wishlist.jsx';
+// eslint-disable-next-line import/extensions
+import Buttons from './buttons.jsx';
 
 class Product extends React.Component {
   // eslint-disable-next-line no-useless-constructor
@@ -40,11 +44,7 @@ class Product extends React.Component {
               {product.Price}
               .99
             </p>
-            <div className="twocolumnstwo">
-              <button className="buybuttons" type="button">Buy Now</button>
-              <p> </p>
-              <button className="buybuttons" type="button">Check Store Stock</button>
-            </div>
+            <Buttons />
             {product.Stock > 0
               ? <p className="green text">Available Now</p>
               : <p className="red text">Out Of Stock</p>}
@@ -60,10 +60,9 @@ class Product extends React.Component {
             <div>
               <button className="bagbutton" type="button">Add To Bag</button>
             </div>
-            <div className="twocolumns">
-              <p className="text">
-                {'<3'}
-                {' '}
+            <div className="twocolumnsthree">
+              <Wishlist />
+              <p className="textincol3 text">
                 Add to Wishlist
               </p>
             </div>
