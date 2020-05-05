@@ -7,15 +7,19 @@ const mongoDB = 'mongodb://localhost:27017/smego';
 // var inserts = {succeeded: 0, failed: 0}
 
 const genInsert = (number) => {
+  const titleCase = (title) => title
+    .split(/ /g).map((word) => `${word.substring(0, 1).toUpperCase()}${word.substring(1)}`)
+    .join(' ');
+
   if (number > 0) {
     // eslint-disable-next-line prefer-const
     let product = {
       // ID: faker.random.number(),
       ID: number,
       Brand: faker.lorem.word().toUpperCase(),
-      Name: faker.lorem.sentence(),
+      Name: titleCase(faker.lorem.sentence()),
       Price: faker.commerce.price(),
-      Rating: faker.random.number(5),
+      Rating: faker.random.number(10) * 0.5,
       Stock: faker.random.number(1000),
       Related: ['space', 'music', 'fun', 'bananas', 'coding', 'dark humor'][faker.random.number(6)],
       Ages: `${faker.random.number(16)}+`,
