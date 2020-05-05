@@ -162,14 +162,41 @@
   text-align: center;
   justify-content: center;
   border: 1px solid rgba(128, 128, 128, 0.24);
-  border-radius: 2px;
+  padding: 10%;
+}
+
+.counterButtonNumber {
+  font-family: 'Kanit', sans-serif;
+  font-weight: 400;
+  font-size: 14pt;
+  text-align: center;
+  justify-content: center;
+  border-top: 1px solid rgba(128, 128, 128, 0.24);
+  border-bottom: 1px solid rgba(128, 128, 128, 0.24);
+  padding: 10%;
+}
+
+.counterParagraph {
+  font-family: 'Kanit', sans-serif;
+  font-weight: 400;
+  font-size: 14pt;
+  color: white;
+  text-align: center;
+  justify-content: center;
+  border-top: 1px solid rgba(128, 128, 128, 0.24);
+  border-bottom: 1px solid rgba(128, 128, 128, 0.24);
   padding: 10%;
 }
 
 .counterButtonDiv {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: auto;
+  align-items: center;
+}
+
+.counterButtonDivAlt {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   align-items: center;
 }
 
