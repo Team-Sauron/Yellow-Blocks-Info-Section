@@ -10,11 +10,9 @@ function Counter(props) {
     <div>
       {count <= 1
         ? (
-          <div className="counterButtonDivAlt">
+          <div className="counterButtonDiv">
             <div className="greyed counterButton">-</div>
-            <p className="counterParagraph"> {count} </p>
             <div className="counterButtonNumber">{count}</div>
-            <p className="counterParagraph"> {count}  </p>
             <div onClick={() => updateCount(count + 1)} className="counterButton" type="button">+</div>
           </div>
         )
@@ -22,21 +20,17 @@ function Counter(props) {
           <div>
             {count > 2
               ? (
-                <div className="counterButtonDivAlt">
+                <div className="counterButtonDiv">
                   <div onClick={() => updateCount(count - 1)} className="counterButton">-</div>
-                  <p className="counterParagraph"> {count} </p>
                   <div className="counterButtonNumber">{count}</div>
-                  <p className="counterParagraph"> {count} </p>
                   <div className="greyed counterButton" type="button">+</div>
                 </div>
               )
               :
               (
-                <div className="counterButtonDivAlt">
+                <div className="counterButtonDiv">
                   <div onClick={() => updateCount(count - 1)} className="counterButton">-</div>
-                  <p className="counterParagraph"> {count} </p>
                   <div className="counterButtonNumber">{count}</div>
-                  <p className="counterParagraph"> {count} </p>
                   <div onClick={() => updateCount(count + 1)} className="counterButton" type="button">+</div>
                 </div>
               )}
