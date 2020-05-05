@@ -6,6 +6,8 @@ import Stars from './stars.jsx';
 import Wishlist from './wishlist.jsx';
 // eslint-disable-next-line import/extensions
 import Buttons from './buttons.jsx';
+// eslint-disable-next-line import/extensions
+import Counter from './counter.jsx';
 
 class Product extends React.Component {
   // eslint-disable-next-line no-useless-constructor
@@ -50,7 +52,7 @@ class Product extends React.Component {
               : <p className="red text">Out Of Stock</p>}
             <div className="text twocolumns">
               {/* <select></select> */}
-              <p> </p>
+              <Counter stock={product.Stock} />
               <p> </p>
               <div>
                 <p>Limit 3</p>

@@ -4,7 +4,7 @@
 
 .container {
   width: 100%;
-  height: 500px;
+  height: 1000px;
   background-color: rgba(255, 253, 221, 0.308);
 }
 
@@ -14,10 +14,12 @@
   border: 1px solid white;
   border-radius: 5px;
   padding: 10px 10px;
-  margin: 10px 10px;
+  /* margin: 10px 10px; */
+  margin-bottom: 10px;
   background: #fd7421;
   color: #000;
   width: 100%;
+  justify-items: left;
 }
 
 .bagbutton:hover {
@@ -29,7 +31,8 @@
 .info {
   float: right;
   width: 300px;
-  padding: 4%;
+  padding-right: 4%;
+  padding-left: 4%;
   justify-items: left;
   align-items: flex-start;
   background-color: white;
@@ -39,6 +42,8 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: auto;
+  justify-items: left;
+  align-items: center;
 }
 
 .threecolumnstwo {
@@ -114,8 +119,8 @@
 
 .buybuttons {
   font-family: 'Kanit', sans-serif;
-  font-weight: 300;
-  font-size: 10pt;
+  font-weight: 400;
+  font-size: 12pt;
   border: none;
   padding: 0;
   margin: 0;
@@ -143,7 +148,31 @@
 .buttonsInSelect {
   padding-bottom: 15px;
 }
-
+.buttonsInSelect:hover {
+  color: #3399cc;
+}
 .selectedButtonDiv {
   border-bottom: 1px solid grey;
+}
+
+.counterButton {
+  font-family: 'Kanit', sans-serif;
+  font-weight: 400;
+  font-size: 14pt;
+  text-align: center;
+  justify-content: center;
+  border: 1px solid rgba(128, 128, 128, 0.24);
+  border-radius: 2px;
+  padding: 10%;
+}
+
+.counterButtonDiv {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  align-items: center;
+}
+
+.greyed {
+  color:rgba(128, 128, 128, 0.24);
 }
