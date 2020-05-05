@@ -8,6 +8,8 @@ import Wishlist from './wishlist.jsx';
 import Buttons from './buttons.jsx';
 // eslint-disable-next-line import/extensions
 import Counter from './counter.jsx';
+// eslint-disable-next-line import/extensions
+import LimitModal from './limitModal.jsx';
 
 class Product extends React.Component {
   // eslint-disable-next-line no-useless-constructor
@@ -16,12 +18,20 @@ class Product extends React.Component {
     const { product } = this.props;
     this.state = {
       // eslint-disable-next-line react/no-unused-state
-      product,
+      product, shown: false,
     };
+  }
+
+  setShown() {
+    const { product, shown } = this.state;
+    this.setState({
+      shown: !shown, product,
+    });
   }
 
   render() {
     const { product } = this.props;
+    const { shown } = this.state;
     return (
       <div className="container">
         <section> </section>
@@ -37,7 +47,7 @@ class Product extends React.Component {
             </p>
             <p className="text">
               {' '}
-              <a href="#">Submit Review</a>
+              <a className="text blue" href="#">Submit Review</a>
             </p>
           </div>
           <div>
@@ -50,30 +60,32 @@ class Product extends React.Component {
             {product.Stock > 0
               ? <p className="green text">Available Now</p>
               : <p className="red text">Out Of Stock</p>}
-            <div className="text twocolumns">
-              {/* <select></select> */}
+            <LimitModal shown={shown} />
+            <div className="text twocolumns counterArea">
               <Counter stock={product.Stock} />
               <p> </p>
-              <div>
-                <p>Limit 3</p>
-                <p>i</p>
+              <div className="limit">
+                <p className="limitSpace">Limit 3</p>
+                <img onClick={() => this.setShown()} src="./../images/i.png"/>
               </div>
             </div>
             <div>
               <button className="bagbutton" type="button">Add To Bag</button>
             </div>
-            <div className="twocolumnsthree">
+            <div className="twocolumnsthree selectedButtonDiv spaceForWishList">
               <Wishlist />
               <p className="textincol3 text">
                 Add to Wishlist
               </p>
             </div>
           </div>
-          <p>Shop more like this:</p>
-          <p>
-            {' '}
-            <a href="#">{product.Related}</a>
-          </p>
+          <div className="text">
+            <p>Shop more like this:</p>
+            <p>
+              {' '}
+              <a className="blue" href="#">{product.Related}</a>
+            </p>
+          </div>
         </div>
       </div>
     );

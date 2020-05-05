@@ -203,3 +203,34 @@
 .greyed {
   color:rgba(128, 128, 128, 0.24);
 }
+
+.icircle {
+  text-align: center;
+  justify-content: center;
+  border: 1px solid rgba(128, 128, 128, 0.24);
+  border-radius: 6px;
+}
+
+.limit {
+  display: grid;
+  grid-template-columns: 3fr 3fr;
+  align-items: center;
+  text-align: right;
+  justify-content: center;
+}
+
+.limitSpace {
+  margin-right: 5px;
+}
+
+.counterArea {
+  margin-bottom: 10px;
+}
+
+.spaceForWishList {
+  padding-bottom: 10px;
+}
+
+.blue {
+  color: #3399cc;
+}
