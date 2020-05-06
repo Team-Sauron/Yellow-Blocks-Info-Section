@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 const puppeteer = require('puppeteer');
 
 const pageURL = 'http://localhost:3002/';
@@ -13,7 +14,7 @@ beforeAll(async () => {
     args: [`--window-size=${width}, ${height}`],
   });
   page = await browser.newPage();
-  await page.setViewport({width, height});
+  await page.setViewport({ width, height });
 });
 
 afterAll(() => {
@@ -24,6 +25,7 @@ describe('open', () => {
   beforeEach(async () => {
     await page.goto(pageURL, { waitUntil: 'networkidle2' });
   });
+
   test('initial title is correct', async () => {
     const brand = await page.$eval('.brand', (e) => e.textContent);
     expect(brand).toEqual('CORPORIS');
