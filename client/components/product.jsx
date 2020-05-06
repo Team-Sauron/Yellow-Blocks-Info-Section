@@ -1,39 +1,55 @@
+/* eslint-disable max-len */
+/* eslint-disable import/extensions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
-// eslint-disable-next-line import/extensions
 import Stars from './stars.jsx';
-// eslint-disable-next-line import/extensions
 import Wishlist from './wishlist.jsx';
-// eslint-disable-next-line import/extensions
 import Buttons from './buttons.jsx';
-// eslint-disable-next-line import/extensions
 import Counter from './counter.jsx';
-// eslint-disable-next-line import/extensions
-import LimitModal from './limitModal.jsx';
+import Modal from './modal.jsx';
 
 class Product extends React.Component {
-  // eslint-disable-next-line no-useless-constructor
   constructor(props) {
     super(props);
     const { product } = this.props;
     this.state = {
       // eslint-disable-next-line react/no-unused-state
-      product, shown: false,
+      product, limitShown: false, vipShown: false,
     };
   }
 
-  setShown() {
-    const { product, shown } = this.state;
+  setLimitShown() {
+    const { product, limitShown, vipShown } = this.state;
     this.setState({
-      shown: !shown, product,
+      limitShown: !limitShown, product, vipShown,
     });
+  }
+
+  setVipShown() {
+    const { product, limitShown, vipShown } = this.state;
+    this.setState({
+      vipShown: !vipShown, product, limitShown,
+    });
+  }
+
+  closeModals(event) {
+    const { product } = this.state;
+    if (!(event.target.className === 'i') && !(event.target.className === 'modal') && !(event.target.className === 'modalTitle') && !(event.target.className === 'modaltexttwo') && !(event.target.className === 'modalBtn') && !(event.target.className === 'modalClose')) {
+      this.setState({
+        vipShown: false, product, limitShown: false,
+      });
+    }
   }
 
   render() {
     const { product } = this.props;
-    const { shown } = this.state;
+    const { limitShown } = this.state;
+    const { vipShown } = this.state;
     return (
-      <div className="container">
+      // eslint-disable-next-line jsx-a11y/no-static-element-interactions
+      <div onClick={this.closeModals.bind(this)} className="container">
         <div className="info">
           <h3 className="brand">{ product.Brand }</h3>
           <h4 className="title">{ product.Name }</h4>
@@ -59,13 +75,12 @@ class Product extends React.Component {
             {product.Stock > 0
               ? <p className="green text">Available Now</p>
               : <p className="red text">Out Of Stock</p>}
-            <LimitModal shown={shown} />
             <div className="text twocolumns counterArea">
               <Counter stock={product.Stock} />
               <p> </p>
               <div className="limit">
                 <p className="limitSpace">Limit 3</p>
-                <img onClick={() => this.setShown()} src="./../images/i.png"/>
+                <img className="i" onClick={() => this.setLimitShown()} src="./../images/i.png" alt="info" />
               </div>
             </div>
             <div>
@@ -86,10 +101,35 @@ class Product extends React.Component {
             </p>
           </div>
         </div>
+        <div>
+          <Modal shown={limitShown}>
+            <div className="modalClose">
+              <button onClick={() => this.setLimitShown()} type="button" className="modalBtn texttwo">X</button>
+            </div>
+            <h4 className="modalTitle">
+              Limit
+            </h4>
+            <p className="modaltexttwo">
+              We restrict the limit a household can buy in order to be fair to all of our fans.
+              If you’ve already reached that limit through previous orders your order may be cancelled.
+            </p>
+          </Modal>
+          <Modal shown={vipShown}>
+            <div className="modalClose">
+              <button onClick={() => this.setVipShown()} type="button" className="modalBtn texttwo">X</button>
+            </div>
+            <h4 className="modalTitle">
+              Vip Points
+            </h4>
+            <p className="modaltexttwo">
+              The VIP Points value shown is an estimate and actual points will be calculated when you check out.
+            </p>
+          </Modal>
+        </div>
         <div className="stats">
-          <div></div>
+          <div> </div>
           <div className="stat">
-            <img src="./../images/cake.png"/>
+            <img src="./../images/cake.png" alt="cake" />
             <p className="statText">
               {product.Ages}
             </p>
@@ -98,7 +138,7 @@ class Product extends React.Component {
             </p>
           </div>
           <div className="stat">
-            <img src="./../images/lego.png"/>
+            <img src="./../images/lego.png" alt="peices" />
             <p className="statText">
               {product.Pieces}
             </p>
@@ -107,17 +147,17 @@ class Product extends React.Component {
             </p>
           </div>
           <div className="stat">
-            <img src="./../images/crown.png"/>
+            <img src="./../images/crown.png" alt="points" />
             <div className="limitTwo">
               <p className="statText limitSpace">
                 {product.VIP_Points}
               </p>
-              <img onClick={() => this.setShown()} src="./../images/i.png"/>
+              <img className="i" onClick={() => this.setVipShown()} src="./../images/i.png" alt="info" />
             </div>
             <p className="texttwo">VIP Points</p>
           </div>
           <div className="statTwo">
-            <img src="./../images/hashtag.png"/>
+            <img src="./../images/hashtag.png" alt="product ID" />
             <p className="statText">
               {product.ID}
             </p>

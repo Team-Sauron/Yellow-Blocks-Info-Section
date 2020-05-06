@@ -2,16 +2,18 @@
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 import React from 'react';
 
-function LimitModal(props) {
-  const { shown } = props;
+function Modal(props) {
+  const { shown, children } = props;
+
+  if (!shown) {
+    return null;
+  }
 
   return (
-    <div>
-      {shown
-        ? <p>hey</p>
-        : <p> </p>}
+    <div className="modal">
+      {children}
     </div>
   );
 }
 
-export default LimitModal;
+export default Modal;
