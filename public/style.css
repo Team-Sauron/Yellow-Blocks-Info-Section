@@ -3,9 +3,12 @@
 } */
 
 .container {
+  display: grid;
+  grid-template-rows: auto;
   width: 100%;
-  height: 1000px;
-  background-color: rgba(255, 253, 221, 0.308);
+  /* height: 1000px; */
+  background-color: #f8f8f8;
+  justify-items: right;
 }
 
 .bagbutton {
@@ -27,15 +30,65 @@
   border: 1px solid #fd7421;
 }
 
+.modalBtn {
+  font-family: sans-serif;
+  font-size: 1.3 rem;
+  background: none;
+  border-color: white;
+}
+
+.modal {
+  justify-items: center;
+  align-items: center;
+  background-color: white;
+  position: fixed;
+  width: 500px;
+  height: 200px;
+  top: 50%;
+  left: 50%;
+  margin-top: -100px;
+  margin-left: -250px;
+}
+
 
 .info {
   float: right;
-  width: 300px;
-  padding-right: 4%;
-  padding-left: 4%;
+  width: 250px;
+  padding-right: 2%;
+  padding-left: 2%;
+  margin-right: 2%;
+  margin-top: 2%;
   justify-items: left;
   align-items: flex-start;
   background-color: white;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  width: 100%;
+  height: 150px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  justify-items: center;
+  align-items: center;
+  background-color: white;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.24);
+}
+
+.stat {
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  padding-right: 35%;
+  padding-left: 35%;
+  border-right: 1px solid rgba(128, 128, 128, 0.24);
+}
+
+.statTwo {
+  align-items: center;
+  text-align: center;
+  justify-content: center;
 }
 
 .threecolumns {
@@ -52,6 +105,7 @@
   align-items: center;
   text-align: center;
   margin: 0;
+  padding: 0;
 }
 
 .twocolumns {
@@ -101,6 +155,8 @@
   font-family: 'Kanit', sans-serif;
   font-weight: 600;
   font-size: 18pt;
+  margin: 0px;
+  padding: 0px;
 }
 
 .text {
@@ -108,6 +164,15 @@
   font-weight: 300;
   font-size: 9pt;
 }
+
+.statText {
+  font-family: 'Kanit', sans-serif;
+  font-weight: 500;
+  font-size: 24pt;
+  padding: 0px;
+  margin: 0px;
+}
+
 
 .green {
   color: green;
@@ -202,4 +267,83 @@
 
 .greyed {
   color:rgba(128, 128, 128, 0.24);
+}
+
+.icircle {
+  text-align: center;
+  justify-content: center;
+  border: 1px solid rgba(128, 128, 128, 0.24);
+  border-radius: 6px;
+}
+
+.limit {
+  display: grid;
+  grid-template-columns: 3fr 3fr;
+  align-items: center;
+  text-align: right;
+  justify-content: center;
+}
+
+.limitTwo {
+  display: grid;
+  grid-template-columns: 6fr 1fr;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+
+
+.limitSpace {
+  margin-right: 5px;
+}
+
+.counterArea {
+  margin-bottom: 10px;
+}
+
+.spaceForWishList {
+  padding-bottom: 10px;
+}
+
+.blue {
+  color: #3399cc;
+}
+
+.texttwo {
+  font-family: 'Kanit', sans-serif;
+  font-weight: 300;
+  font-size: 12pt;
+  padding: 0px;
+  margin: 0px;
+  text-align: center;
+}
+
+.modaltexttwo {
+  font-family: 'Kanit', sans-serif;
+  font-weight: 300;
+  font-size: 12pt;
+  padding: 0px;
+  margin: 0px;
+  text-align: center;
+}
+
+.rmPadding {
+  padding-bottom: 0px;
+}
+
+.rmMargin {
+  margin-bottom: 0px;
+}
+
+.modalTitle {
+  font-family: 'Kanit', sans-serif;
+  font-weight: 400;
+  font-size: 14pt;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.modalClose {
+  text-align: right;
 }
