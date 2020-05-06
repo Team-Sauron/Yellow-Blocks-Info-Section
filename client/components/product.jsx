@@ -34,7 +34,6 @@ class Product extends React.Component {
     const { shown } = this.state;
     return (
       <div className="container">
-        <section> </section>
         <div className="info">
           <h3 className="brand">{ product.Brand }</h3>
           <h4 className="title">{ product.Name }</h4>
@@ -79,13 +78,54 @@ class Product extends React.Component {
               </p>
             </div>
           </div>
-          <div className="text">
+          <div className="text rmPadding rmMargin">
             <p>Shop more like this:</p>
             <p>
               {' '}
               <a className="blue" href="#">{product.Related}</a>
             </p>
           </div>
+        </div>
+        <div className="stats">
+          <div></div>
+          <div className="stat">
+            <img src="./../images/cake.png"/>
+            <p className="statText">
+              {product.Ages}
+            </p>
+            <p className="texttwo">
+              Ages
+            </p>
+          </div>
+          <div className="stat">
+            <img src="./../images/lego.png"/>
+            <p className="statText">
+              {product.Pieces}
+            </p>
+            <p className="texttwo">
+              Pieces
+            </p>
+          </div>
+          <div className="stat">
+            <img src="./../images/crown.png"/>
+            <div className="limitTwo">
+              <p className="statText limitSpace">
+                {product.VIP_Points}
+              </p>
+              <img onClick={() => this.setShown()} src="./../images/i.png"/>
+            </div>
+            <p className="texttwo">VIP Points</p>
+          </div>
+          <div className="statTwo">
+            <img src="./../images/hashtag.png"/>
+            <p className="statText">
+              {product.ID}
+            </p>
+            <p className="texttwo">
+              Item
+            </p>
+          </div>
+          <div> </div>
         </div>
       </div>
     );
