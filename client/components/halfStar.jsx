@@ -23,15 +23,15 @@ class Half extends React.Component {
           ? (
             <div>
               {pos > 0
-                ? <img className="halfStar" src="./images/leftGold.png" alt="average rating as stars" />
-                : <img className="halfStar" src="./images/rightGold.png" alt="average rating as stars" />}
+                ? <img className="halfStar" src="http://localhost:3002/images/leftGold.png" alt="average rating as stars" />
+                : <img className="halfStar" src="http://localhost:3002/images/rightGold.png" alt="average rating as stars" />}
             </div>
           )
           : (
             <div>
               {pos > 0
-                ? <img className="halfStar" src="./images/leftGrey.png" alt="average rating as stars" />
-                : <img className="halfStar" src="./images/rightGrey.png" alt="average rating as stars" />}
+                ? <img className="halfStar" src="http://localhost:3002/images/leftGrey.png" alt="average rating as stars" />
+                : <img className="halfStar" src="http://localhost:3002/images/rightGrey.png" alt="average rating as stars" />}
             </div>
           )}
       </div>

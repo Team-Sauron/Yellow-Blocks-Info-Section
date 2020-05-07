@@ -80,7 +80,7 @@ class Product extends React.Component {
               <p> </p>
               <div className="limit">
                 <p className="limitSpace">Limit 3</p>
-                <img className="i" onClick={() => this.setLimitShown()} src="./../images/i.png" alt="info" />
+                <img className="i" onClick={() => this.setLimitShown()} src="http://localhost:3002/images/i.png" alt="info" />
               </div>
             </div>
             <div>
@@ -129,7 +129,7 @@ class Product extends React.Component {
         <div className="stats">
           <div> </div>
           <div className="stat">
-            <img src="./../images/cake.png" alt="cake" />
+            <img src="http://localhost:3002/images/cake.png" alt="cake" />
             <p className="statText">
               {product.Ages}
             </p>
@@ -138,7 +138,7 @@ class Product extends React.Component {
             </p>
           </div>
           <div className="stat">
-            <img src="./../images/lego.png" alt="peices" />
+            <img src="http://localhost:3002/images/lego.png" alt="peices" />
             <p className="statText">
               {product.Pieces}
             </p>
@@ -147,17 +147,17 @@ class Product extends React.Component {
             </p>
           </div>
           <div className="stat">
-            <img src="./../images/crown.png" alt="points" />
+            <img src="http://localhost:3002/images/crown.png" alt="points" />
             <div className="limitTwo">
               <p className="statText limitSpace">
                 {product.VIP_Points}
               </p>
-              <img className="i" onClick={() => this.setVipShown()} src="./../images/i.png" alt="info" />
+              <img className="i" onClick={() => this.setVipShown()} src="http://localhost:3002/images/i.png" alt="info" />
             </div>
             <p className="texttwo">VIP Points</p>
           </div>
           <div className="statTwo">
-            <img src="./../images/hashtag.png" alt="product ID" />
+            <img src="http://localhost:3002/images/hashtag.png" alt="product ID" />
             <p className="statText">
               {product.ID}
             </p>
