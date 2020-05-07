@@ -7,10 +7,13 @@ const $ = require('jquery');
 
 
 let url = window.location.href;
-url = url.slice(url.indexOf('=') + 1);
-
+if (url.indexOf('=') !== -1) {
+  url = url.slice(url.indexOf('=') + 1);
+} else {
+  url = 1;
+}
 const settings = {
-  url: `/api/info-section/${url}`,
+  url: `http://localhost:3002/api/info-section/${url}`,
   method: 'GET',
   timeout: 0,
 };
