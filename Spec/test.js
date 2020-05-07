@@ -18,7 +18,7 @@ beforeAll(async () => {
 });
 
 afterAll(() => {
-  // browser.close();
+  browser.close();
 });
 
 describe('open', () => {

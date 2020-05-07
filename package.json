@@ -32,7 +32,7 @@
     "jquery": "^3.5.0",
     "mongoose": "^5.9.10",
     "nodemon": "^2.0.3",
-    "puppeteer": "^3.0.2",
+    "puppeteer": "^3.0.3",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "styled-components": "^5.1.0",
