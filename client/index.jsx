@@ -12,6 +12,7 @@ if (url.indexOf('=') !== -1) {
 } else {
   url = 1;
 }
+
 const settings = {
   url: `http://localhost:3002/api/info-section/${url}`,
   method: 'GET',
