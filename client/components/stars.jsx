@@ -33,8 +33,8 @@ class Stars extends React.Component {
       <div className="stars">
         {rating[0].map((each, idx) => (
           <div className="star">
-            <Half className="halfStar" rating={rating[0][idx]} pos={1} />
-            <Half className="halfStar" rating={rating[1][idx]} pos={0} />
+            <Half className="halfStar" key={product.ID} rating={rating[0][idx]} pos={1} />
+            <Half className="halfStar" key={product.ID} rating={rating[1][idx]} pos={0} />
           </div>
         ))}
       </div>
