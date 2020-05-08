@@ -1,14 +1,8 @@
-/* * {
-  border: .1px solid red !important;
-} */
-
 .container {
   display: grid;
   grid-template-rows: auto;
   width: 100%;
-  /* height: 1000px; */
-  background-color: #f8f8f8;
-  justify-items: right;
+  /* background-color: #f8f8f8; */
 }
 
 .bagbutton {
@@ -51,17 +45,19 @@
   box-shadow: 10px 5px 20px rgba(128, 128, 128, 0.377);
 }
 
-
 .info {
   float: right;
   width: 250px;
   padding-right: 2%;
   padding-left: 2%;
-  margin-right: 2%;
+  margin-right: 350px;
+  margin-left: 900px;
   margin-top: 2%;
   justify-items: left;
+  justify-self: right;
   align-items: flex-start;
   background-color: white;
+  z-index: 1;
 }
 
 .stats {
@@ -69,7 +65,7 @@
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
   width: 100%;
   height: 150px;
-  margin-top: 20px;
+  margin-top: 50px;
   justify-items: center;
   align-items: center;
   background-color: white;
