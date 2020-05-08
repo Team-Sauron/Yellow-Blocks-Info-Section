@@ -1,14 +1,10 @@
-/* eslint-disable max-len */
-/* eslint-disable import/extensions */
-/* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
-import Stars from './stars.jsx';
-import Wishlist from './wishlist.jsx';
-import Buttons from './buttons.jsx';
-import Counter from './counter.jsx';
-import Modal from './modal.jsx';
+import Stars from './stars';
+import Wishlist from './wishlist';
+import Buttons from './buttons';
+import Counter from './counter';
+import Modal from './modal';
 
 class Product extends React.Component {
   constructor(props) {
@@ -49,7 +45,7 @@ class Product extends React.Component {
     const { vipShown } = this.state;
     return (
       // eslint-disable-next-line jsx-a11y/no-static-element-interactions
-      <div onClick={this.closeModals.bind(this)} className="container">
+      <div onClick={this.closeModals.bind(this)} onKeyPress={() => this.closeModals.bind(this)} className="container">
         <div className="info">
           <h3 className="brand">{ product.Brand }</h3>
           <h4 className="title">{ product.Name }</h4>
@@ -62,7 +58,7 @@ class Product extends React.Component {
             </p>
             <p className="text">
               {' '}
-              <a className="text blue" href="#">Submit Review</a>
+              <a className="text blue" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Submit Review</a>
             </p>
           </div>
           <div>
@@ -80,7 +76,7 @@ class Product extends React.Component {
               <p> </p>
               <div className="limit">
                 <p className="limitSpace">Limit 3</p>
-                <img className="i" onClick={() => this.setLimitShown()} src="http://localhost:3002/images/i.png" alt="info" />
+                <img className="i" onClick={() => this.setLimitShown()} onKeyPress={() => this.setLimitShown()} src="http://localhost:3002/images/i.png" alt="info" />
               </div>
             </div>
             <div>
@@ -97,7 +93,7 @@ class Product extends React.Component {
             <p>Shop more like this:</p>
             <p>
               {' '}
-              <a className="blue" href="#">{product.Related}</a>
+              <a className="blue" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">{product.Related}</a>
             </p>
           </div>
         </div>
@@ -111,7 +107,8 @@ class Product extends React.Component {
             </h4>
             <p className="modaltexttwo">
               We restrict the limit a household can buy in order to be fair to all of our fans.
-              If you’ve already reached that limit through previous orders your order may be cancelled.
+              If you’ve already reached that limit through previous orders,
+              your order may be cancelled.
             </p>
           </Modal>
           <Modal shown={vipShown}>
@@ -122,7 +119,8 @@ class Product extends React.Component {
               Vip Points
             </h4>
             <p className="modaltexttwo">
-              The VIP Points value shown is an estimate and actual points will be calculated when you check out.
+              The VIP Points value shown is an estimate.
+              The actual points will be calculated when you check out.
             </p>
           </Modal>
         </div>
@@ -152,7 +150,7 @@ class Product extends React.Component {
               <p className="statText limitSpace">
                 {product.VIP_Points}
               </p>
-              <img className="i" onClick={() => this.setVipShown()} src="http://localhost:3002/images/i.png" alt="info" />
+              <img className="i" onClick={() => this.setVipShown()} onKeyPress={() => this.setVipShown()} src="http://localhost:3002/images/i.png" alt="info" />
             </div>
             <p className="texttwo">VIP Points</p>
           </div>

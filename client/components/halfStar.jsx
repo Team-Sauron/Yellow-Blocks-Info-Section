@@ -11,12 +11,6 @@ class Half extends React.Component {
 
   render() {
     const { rating, pos } = this.state;
-    // console.log("rating and pos ", rating, pos);
-    // if (rating > 0) {
-    //   console.log('gold half');
-    // } else {
-    //   console.log('grey half');
-    // }
     return (
       <div>
         {rating > 0

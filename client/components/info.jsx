@@ -1,9 +1,7 @@
 import React from 'react';
-// eslint-disable-next-line import/extensions
-import Product from './product.jsx';
+import Product from './product';
 
 class Info extends React.Component {
-  // eslint-disable-next-line no-useless-constructor
   constructor(props) {
     super(props);
     const { entry } = this.props;
