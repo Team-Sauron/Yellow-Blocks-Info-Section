@@ -1,10 +1,8 @@
 import React from 'react';
 import ReactDom from 'react-dom';
-// eslint-disable-next-line import/extensions
-import Info from './components/info.jsx';
+import Info from './components/info';
 
 const $ = require('jquery');
-
 
 let url = window.location.href;
 if (url.indexOf('=') !== -1) {

@@ -1,10 +1,8 @@
-/* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 import React, { useState } from 'react';
 
-function Counter(props) {
+function Counter() {
   const [count, updateCount] = useState(1);
-  const { stock } = props;
 
   return (
     <div>
@@ -13,7 +11,7 @@ function Counter(props) {
           <div className="counterButtonDiv">
             <div className="greyed counterButton">-</div>
             <div className="counterButtonNumber">{count}</div>
-            <div onClick={() => updateCount(count + 1)} className="counterButton" type="button">+</div>
+            <div onClick={() => updateCount(count + 1)} onKeyPress={() => updateCount(count + 1)} className="counterButton" type="button">+</div>
           </div>
         )
         : (
@@ -21,17 +19,16 @@ function Counter(props) {
             {count > 2
               ? (
                 <div className="counterButtonDiv">
-                  <div onClick={() => updateCount(count - 1)} className="counterButton">-</div>
+                  <div onClick={() => updateCount(count - 1)} onKeyPress={() => updateCount(count - 1)} className="counterButton">-</div>
                   <div className="counterButtonNumber">{count}</div>
                   <div className="greyed counterButton" type="button">+</div>
                 </div>
               )
-              :
-              (
+              : (
                 <div className="counterButtonDiv">
-                  <div onClick={() => updateCount(count - 1)} className="counterButton">-</div>
+                  <div onClick={() => updateCount(count - 1)} onKeyPress={() => updateCount(count - 1)} className="counterButton">-</div>
                   <div className="counterButtonNumber">{count}</div>
-                  <div onClick={() => updateCount(count + 1)} className="counterButton" type="button">+</div>
+                  <div onClick={() => updateCount(count + 1)} onKeyPress={() => updateCount(count + 1)} className="counterButton" type="button">+</div>
                 </div>
               )}
           </div>
