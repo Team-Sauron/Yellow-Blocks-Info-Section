@@ -32,8 +32,6 @@ app.use(express.json());
 
 app.get('/api/info-section/', (req, res) => {
   db.Product.find((err, result) => {
-    // eslint-disable-next-line no-console
-    console.log('grabbing products');
     if (err) {
       // eslint-disable-next-line no-console
       console.log('error');
@@ -45,8 +43,6 @@ app.get('/api/info-section/', (req, res) => {
 app.get('/api/info-section/:id', (req, res) => {
   const id = path.basename(req.url);
   db.Product.findOne({ ID: id }, (err, result) => {
-    // eslint-disable-next-line no-console
-    console.log('grabbing product');
     if (err) {
       // eslint-disable-next-line no-console
       console.log('error');
