@@ -125,6 +125,7 @@ class Product extends React.Component {
             </p>
           </Modal>
         </div>
+        <div> </div>
         <div className="stats">
           <div> </div>
           <div className="stat">
