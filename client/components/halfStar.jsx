@@ -17,8 +17,8 @@ class Half extends React.Component {
           ? (
             <div>
               {pos > 0
-                ? <img className="halfStar" src="http://localhost:3002/images/leftGold.png" alt="average rating as stars" />
-                : <img className="halfStar" src="http://localhost:3002/images/rightGold.png" alt="average rating as stars" />}
+                ? <img className="halfStar" src="http://18.144.89.238/images/leftGold.png" alt="average rating as stars" />
+                : <img className="halfStar" src="http://18.144.89.238/images/rightGold.png" alt="average rating as stars" />}
             </div>
           )
           : (

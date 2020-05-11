@@ -91,7 +91,7 @@ class Product extends React.Component {
                     your order may be cancelled.
                   </p>
                 </Modal>
-                <img className="i" onClick={() => this.setLimitShown()} onKeyPress={() => this.setLimitShown()} src="http://localhost:3002/images/i.png" alt="info" />
+                <img className="i" onClick={() => this.setLimitShown()} onKeyPress={() => this.setLimitShown()} src="http://18.144.89.238/images/i.png" alt="info" />
               </div>
             </div>
             <div>
@@ -116,7 +116,7 @@ class Product extends React.Component {
         <div className="stats">
           <div> </div>
           <div className="stat">
-            <img src="http://localhost:3002/images/cake.png" alt="cake" />
+            <img src="http://18.144.89.238/images/cake.png" alt="cake" />
             <p className="statText">
               {product.Ages}
             </p>
@@ -125,7 +125,7 @@ class Product extends React.Component {
             </p>
           </div>
           <div className="stat">
-            <img src="http://localhost:3002/images/lego.png" alt="peices" />
+            <img src="http://18.144.89.238/images/lego.png" alt="peices" />
             <p className="statText">
               {product.Pieces}
             </p>
@@ -146,17 +146,17 @@ class Product extends React.Component {
                 The actual points will be calculated when you check out.
               </p>
             </Modal>
-            <img src="http://localhost:3002/images/crown.png" alt="points" />
+            <img src="http://18.144.89.238/images/crown.png" alt="points" />
             <div className="limitTwo">
               <p className="statText limitSpace">
                 {product.VIP_Points}
               </p>
-              <img className="i" onClick={() => this.setVipShown()} onKeyPress={() => this.setVipShown()} src="http://localhost:3002/images/i.png" alt="info" />
+              <img className="i" onClick={() => this.setVipShown()} onKeyPress={() => this.setVipShown()} src="http://18.144.89.238/images/i.png" alt="info" />
             </div>
             <p className="texttwo">VIP Points</p>
           </div>
           <div className="statTwo">
-            <img src="http://localhost:3002/images/hashtag.png" alt="product ID" />
+            <img src="http://18.144.89.238/images/hashtag.png" alt="product ID" />
             <p className="statText">
               {product.ID}
             </p>

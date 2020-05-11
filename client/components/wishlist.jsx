@@ -6,8 +6,8 @@ function Wishlist() {
   return (
     <div>
       {added
-        ? <img onClick={() => setAdded(!added)} onKeyPress={() => setAdded(!added)} src="http://localhost:3002/images/addtowishlist.png" alt="un-add to wishlist button" />
-        : <img onClick={() => setAdded(!added)} onKeyPress={() => setAdded(!added)} src="http://localhost:3002/images/addtowishlist1.png" alt="add to wishlist button" />}
+        ? <img onClick={() => setAdded(!added)} onKeyPress={() => setAdded(!added)} src="http://18.144.89.238/images/addtowishlist.png" alt="un-add to wishlist button" />
+        : <img onClick={() => setAdded(!added)} onKeyPress={() => setAdded(!added)} src="http://18.144.89.238/images/addtowishlist1.png" alt="add to wishlist button" />}
     </div>
   );
 }
