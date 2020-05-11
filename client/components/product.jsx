@@ -46,7 +46,7 @@ class Product extends React.Component {
     return (
       // eslint-disable-next-line jsx-a11y/no-static-element-interactions
       <div onClick={this.closeModals.bind(this)} onKeyPress={() => this.closeModals.bind(this)} className="container">
-        <div></div>
+        <div />
         <div className="info">
           <h3 className="brand">{ product.Brand }</h3>
           <h4 className="title">{ product.Name }</h4>
@@ -77,6 +77,20 @@ class Product extends React.Component {
               <p> </p>
               <div className="limit">
                 <p className="limitSpace">Limit 3</p>
+                <Modal shown={limitShown}>
+                  <div className="modalClose">
+                    <button onClick={() => this.setLimitShown()} type="button" className="modalBtn texttwo">X</button>
+                  </div>
+                  <h4 className="modalTitle">
+                    Limit
+                  </h4>
+                  <p className="modaltexttwo">
+                    We restrict the limit a household can buy
+                    in order to be fair to all of our fans.
+                    If you’ve already reached that limit through previous orders,
+                    your order may be cancelled.
+                  </p>
+                </Modal>
                 <img className="i" onClick={() => this.setLimitShown()} onKeyPress={() => this.setLimitShown()} src="http://localhost:3002/images/i.png" alt="info" />
               </div>
             </div>
@@ -97,33 +111,6 @@ class Product extends React.Component {
               <a className="blue" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">{product.Related}</a>
             </p>
           </div>
-        </div>
-        <div>
-          <Modal shown={limitShown}>
-            <div className="modalClose">
-              <button onClick={() => this.setLimitShown()} type="button" className="modalBtn texttwo">X</button>
-            </div>
-            <h4 className="modalTitle">
-              Limit
-            </h4>
-            <p className="modaltexttwo">
-              We restrict the limit a household can buy in order to be fair to all of our fans.
-              If you’ve already reached that limit through previous orders,
-              your order may be cancelled.
-            </p>
-          </Modal>
-          <Modal shown={vipShown}>
-            <div className="modalClose">
-              <button onClick={() => this.setVipShown()} type="button" className="modalBtn texttwo">X</button>
-            </div>
-            <h4 className="modalTitle">
-              Vip Points
-            </h4>
-            <p className="modaltexttwo">
-              The VIP Points value shown is an estimate.
-              The actual points will be calculated when you check out.
-            </p>
-          </Modal>
         </div>
         <div> </div>
         <div className="stats">
@@ -147,6 +134,18 @@ class Product extends React.Component {
             </p>
           </div>
           <div className="stat">
+            <Modal shown={vipShown}>
+              <div className="modalClose">
+                <button onClick={() => this.setVipShown()} type="button" className="modalBtn texttwo">X</button>
+              </div>
+              <h4 className="modalTitle">
+                Vip Points
+              </h4>
+              <p className="modaltexttwo">
+                The VIP Points value shown is an estimate.
+                The actual points will be calculated when you check out.
+              </p>
+            </Modal>
             <img src="http://localhost:3002/images/crown.png" alt="points" />
             <div className="limitTwo">
               <p className="statText limitSpace">
