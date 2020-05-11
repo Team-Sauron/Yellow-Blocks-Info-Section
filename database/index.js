@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Product = require('./product');
 
-const mongoDB = 'mongodb://18.144.89.238:27017/smego';
+const mongoDB = 'mongodb://127.0.0.1:27017/smego';
 
 mongoose.connect(mongoDB, { useNewUrlParser: true, useUnifiedTopology: true }, (err) => {
   if (err) {
