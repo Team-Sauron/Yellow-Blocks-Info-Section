@@ -52,7 +52,7 @@ app.get('/api/info-section/:id', (req, res) => {
 });
 
 // listen
-const port = 8080;
+const port = 3002;
 
 app.listen(port, (err) => {
   if (err) {
