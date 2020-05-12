@@ -1,13 +1,17 @@
 // import
 const express = require('express');
 const path = require('path');
+const compression = require('compression');
 const db = require('../database');
+
 
 // init
 
 const app = express();
 
 // static
+
+app.use(compression());
 
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*');
@@ -30,15 +34,15 @@ app.use(express.json());
 
 // });
 
-app.get('/api/info-section/', (req, res) => {
-  db.Product.find((err, result) => {
-    if (err) {
-      // eslint-disable-next-line no-console
-      console.log('error');
-    }
-    return res.end(JSON.stringify(result));
-  }).limit(1000);
-});
+// app.get('/api/info-section/', (req, res) => {
+//   db.Product.find((err, result) => {
+//     if (err) {
+//       // eslint-disable-next-line no-console
+//       console.log('error');
+//     }
+//     return res.end(JSON.stringify(result));
+//   }).limit(1000);
+// });
 
 app.get('/api/info-section/:id', (req, res) => {
   const id = path.basename(req.url);

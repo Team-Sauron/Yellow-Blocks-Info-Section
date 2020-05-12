@@ -1,1 +1,1 @@
-module.exports = window.location.host;
+module.exports = window.location.origin;
