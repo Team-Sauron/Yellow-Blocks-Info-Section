@@ -4,15 +4,15 @@ import Info from './components/info';
 
 const $ = require('jquery');
 
-let url = window.location.href;
+const url = require('./components/ip');
+
+let id = 1;
 if (url.indexOf('=') !== -1) {
-  url = url.slice(url.indexOf('=') + 1);
-} else {
-  url = 1;
+  id = url.slice(url.indexOf('=') + 1);
 }
 
 const settings = {
-  url: `http://18.144.89.238/api/info-section/${url}`,
+  url: `${url}/api/info-section/${id}`,
   method: 'GET',
   timeout: 0,
 };
