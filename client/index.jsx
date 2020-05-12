@@ -5,7 +5,8 @@ import Info from './components/info';
 const $ = require('jquery');
 
 const url = require('./components/ip');
-const href = window.location.href;
+
+const { href } = window.location;
 
 let id = 1;
 if (href.indexOf('=') !== -1) {
