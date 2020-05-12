@@ -5,10 +5,11 @@ import Info from './components/info';
 const $ = require('jquery');
 
 const url = require('./components/ip');
+const href = window.location.href;
 
 let id = 1;
-if (url.indexOf('=') !== -1) {
-  id = url.slice(url.indexOf('=') + 1);
+if (href.indexOf('=') !== -1) {
+  id = href.slice(href.indexOf('=') + 1);
 }
 
 const settings = {
