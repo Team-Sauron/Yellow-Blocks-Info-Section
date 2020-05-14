@@ -53,7 +53,7 @@ class Product extends React.Component {
           <img src={`${url}/images/logo.png`} alt="logo" />
           <div />
           <div className="searchDiv texttwo">
-            <form className="searchForm">
+            <form className="searchForm" onSubmit={(e) => e.preventDefault()}>
               <input className="searchInput" type="text" placeholder="  Search..." />
             </form>
           </div>
