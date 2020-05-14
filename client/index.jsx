@@ -8,10 +8,9 @@ const url = require('./components/ip');
 
 const { href } = window.location;
 
-let id = 1;
-if (href.indexOf('=') !== -1) {
-  id = href.slice(href.indexOf('=') + 1);
-}
+const params = new URLSearchParams(href.split('?')[1])
+
+let id = params.get('pid') || 1;
 
 const settings = {
   url: `${url}/api/info-section/${id}`,
