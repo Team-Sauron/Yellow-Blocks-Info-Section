@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports = {
-  mode: 'development',
+  mode: 'production',
   entry: `${path.join(__dirname, '/client/index.jsx')}`,
   output: {
     filename: 'bundle.js',
@@ -17,7 +17,12 @@ module.exports = {
           presets: ['@babel/preset-env', '@babel/preset-react'],
         },
       },
+    },
+    {
+      test: /\.css/,
+      loaders: ['style-loader', 'css-loader'],
+      include: `${__dirname}/client/styles.css`,
     }],
   },
-  resolve: { extensions: ['.js', '.jsx'] },
+  resolve: { extensions: ['.js', '.jsx', '.css'] },
 };

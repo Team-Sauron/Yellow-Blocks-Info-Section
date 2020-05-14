@@ -4,15 +4,16 @@ import Info from './components/info';
 
 const $ = require('jquery');
 
-let url = window.location.href;
-if (url.indexOf('=') !== -1) {
-  url = url.slice(url.indexOf('=') + 1);
-} else {
-  url = 1;
-}
+const url = require('./components/ip');
+
+const { href } = window.location;
+
+const params = new URLSearchParams(href.split('?')[1])
+
+let id = params.get('pid') || 1;
 
 const settings = {
-  url: `http://localhost:3002/api/info-section/${url}`,
+  url: `${url}/api/info-section/${id}`,
   method: 'GET',
   timeout: 0,
 };

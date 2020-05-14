@@ -8,7 +8,7 @@ function Modal(props) {
   }
 
   return (
-    <div className="modal">
+    <div className="infomodal">
       {children}
     </div>
   );

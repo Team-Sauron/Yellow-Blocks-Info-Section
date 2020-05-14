@@ -5,6 +5,9 @@ import Wishlist from './wishlist';
 import Buttons from './buttons';
 import Counter from './counter';
 import Modal from './modal';
+import styles from '../styles.css';
+
+const url = require('./ip');
 
 class Product extends React.Component {
   constructor(props) {
@@ -46,7 +49,17 @@ class Product extends React.Component {
     return (
       // eslint-disable-next-line jsx-a11y/no-static-element-interactions
       <div onClick={this.closeModals.bind(this)} onKeyPress={() => this.closeModals.bind(this)} className="container">
-        <div />
+        <div className="legobarthing">
+          <div />
+          <img src={`${url}/images/logo.png`} alt="logo" />
+          <div />
+          <div className="searchDiv texttwo">
+            <form className="searchForm" onSubmit={(e) => e.preventDefault()}>
+              <input className="searchInput" type="text" placeholder="  Search..." />
+            </form>
+          </div>
+          <div />
+        </div>
         <div className="info">
           <h3 className="brand">{ product.Brand }</h3>
           <h4 className="title">{ product.Name }</h4>
@@ -91,7 +104,7 @@ class Product extends React.Component {
                     your order may be cancelled.
                   </p>
                 </Modal>
-                <img className="i" onClick={() => this.setLimitShown()} onKeyPress={() => this.setLimitShown()} src="http://localhost:3002/images/i.png" alt="info" />
+                <img className="i" onClick={() => this.setLimitShown()} onKeyPress={() => this.setLimitShown()} src={`${url}/images/i.png`} alt="info" />
               </div>
             </div>
             <div>
@@ -116,7 +129,7 @@ class Product extends React.Component {
         <div className="stats">
           <div> </div>
           <div className="stat">
-            <img src="http://localhost:3002/images/cake.png" alt="cake" />
+            <img src={`${url}/images/cake.png`} alt="cake" />
             <p className="statText">
               {product.Ages}
             </p>
@@ -125,7 +138,7 @@ class Product extends React.Component {
             </p>
           </div>
           <div className="stat">
-            <img src="http://localhost:3002/images/lego.png" alt="peices" />
+            <img src={`${url}/images/lego.png`} alt="peices" />
             <p className="statText">
               {product.Pieces}
             </p>
@@ -146,17 +159,17 @@ class Product extends React.Component {
                 The actual points will be calculated when you check out.
               </p>
             </Modal>
-            <img src="http://localhost:3002/images/crown.png" alt="points" />
+            <img src={`${url}/images/crown.png`} alt="points" />
             <div className="limitTwo">
               <p className="statText limitSpace">
                 {product.VIP_Points}
               </p>
-              <img className="i" onClick={() => this.setVipShown()} onKeyPress={() => this.setVipShown()} src="http://localhost:3002/images/i.png" alt="info" />
+              <img className="i" onClick={() => this.setVipShown()} onKeyPress={() => this.setVipShown()} src={`${url}/images/i.png`} alt="info" />
             </div>
             <p className="texttwo">VIP Points</p>
           </div>
           <div className="statTwo">
-            <img src="http://localhost:3002/images/hashtag.png" alt="product ID" />
+            <img src={`${url}/images/hashtag.png`} alt="product ID" />
             <p className="statText">
               {product.ID}
             </p>
