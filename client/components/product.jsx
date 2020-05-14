@@ -48,7 +48,17 @@ class Product extends React.Component {
     return (
       // eslint-disable-next-line jsx-a11y/no-static-element-interactions
       <div onClick={this.closeModals.bind(this)} onKeyPress={() => this.closeModals.bind(this)} className="container">
-        <div />
+        <div className="legobarthing">
+          <div />
+          <img src={`${url}/images/logo.png`} alt="logo" />
+          <div />
+          <div className="searchDiv texttwo">
+            <form className="searchForm">
+              <input className="searchInput" type="text" placeholder="  Search..." />
+            </form>
+          </div>
+          <div />
+        </div>
         <div className="info">
           <h3 className="brand">{ product.Brand }</h3>
           <h4 className="title">{ product.Name }</h4>
