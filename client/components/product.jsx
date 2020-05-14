@@ -5,6 +5,7 @@ import Wishlist from './wishlist';
 import Buttons from './buttons';
 import Counter from './counter';
 import Modal from './modal';
+import styles from '../styles.css';
 
 const url = require('./ip');
 
