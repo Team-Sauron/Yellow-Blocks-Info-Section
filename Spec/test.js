@@ -1,22 +1,21 @@
 /* eslint-disable no-undef */
 const puppeteer = require('puppeteer');
 const fs = require('fs');
+const pageURL = require('../client/components/ip');
 
-const pageURL = 'http://localhost:3002/?pid=9507';
 let page;
 let browser;
-const width = 1280;
-const height = 720;
+// const width = 1280;
+// const height = 720;
 const now = new Date();
 
 beforeAll(async () => {
   browser = await puppeteer.launch({
-    headless: false,
+    headless: true,
     slowMo: 80,
-    args: [`--window-size=${width}, ${height}`],
+    // args: [`--window-size=${width}, ${height}`],
   });
   page = await browser.newPage();
-  await page.setViewport({ width, height });
 });
 
 afterAll(() => {
@@ -31,7 +30,7 @@ describe('open', () => {
 
   test('entry loaded is correct', async () => {
     const brand = await page.$eval('.brand', (e) => e.textContent);
-    expect(brand).toEqual('DOLORES');
+    expect(brand).toEqual('ID');
   });
 
   test('screenshot was taken on load', async () => {
