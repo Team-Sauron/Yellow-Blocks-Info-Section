@@ -4,8 +4,8 @@ orbs:
 jobs:
   build-and-test:
     docker:
-      - image: circleci/node:9.4
-      # - image: circleci/node:12.16.1
+      # - image: circleci/node:9.4
+      - image: circleci/node:12.16.1
     executor:
       name: node/default
     steps:
@@ -13,6 +13,8 @@ jobs:
       - node/with-cache:
           steps:
             - run: npm install
+            - run: npm build
+            - run: npm start
             - run: npm test
 workflows:
     build-and-test:
