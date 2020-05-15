@@ -4,7 +4,8 @@ orbs:
 jobs:
   build-and-test:
     docker:
-      - image: circleci/node:9.4
+      # - image: circleci/node:9.4
+      - image: circleci/node:12.16.1
     executor:
       name: node/default
     steps:
