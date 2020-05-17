@@ -35,12 +35,12 @@ class Product extends React.Component {
 
   closeModals(event) {
     const { product } = this.state;
-    if (!(event.target.className === styles.i)
-    && !(event.target.className === styles.modal)
-    && !(event.target.className === styles.modalTitle)
-    && !(event.target.className === styles.modaltexttwo)
-    && !(event.target.className === styles.modalBtn)
-    && !(event.target.className === styles.modalClose)) {
+    if ((event.target.className !== styles.i)
+    && (event.target.className !== styles.modal)
+    && (event.target.className !== styles.modalTitle)
+    && (event.target.className !== styles.modaltexttwo)
+    && (event.target.className !== styles.modalBtn)
+    && (event.target.className !== styles.modalClose)) {
       this.setState({
         vipShown: false, product, limitShown: false,
       });
@@ -109,7 +109,7 @@ class Product extends React.Component {
                     your order may be cancelled.
                   </p>
                 </Modal>
-                <img className={`${styles.i}`} onClick={() => this.setLimitShown()} onKeyPress={() => this.setLimitShown()} src={`${url}/images/i.png`} alt="info" />
+                <img className={styles.i} onClick={() => this.setLimitShown()} onKeyPress={() => this.setLimitShown()} src={`${url}/images/i.png`} alt="info" />
               </div>
             </div>
             <div>
@@ -154,7 +154,7 @@ class Product extends React.Component {
           <div className={`${styles.stat}`}>
             <Modal shown={vipShown}>
               <div className={`${styles.modalClose}`}>
-                <button onClick={() => this.setVipShown()} type="button" className={`${styles.modalBtn}`.concat(`${styles.texttwo}`)}>X</button>
+                <button onClick={() => this.setVipShown()} type="button" className={`${styles.modalBtn}`.concat(` ${styles.texttwo}`)}>X</button>
               </div>
               <h4 className={`${styles.modalTitle}`}>
                 Vip Points
@@ -169,7 +169,7 @@ class Product extends React.Component {
               <p className={`${styles.statText}`.concat(` ${styles.limitSpace}`)}>
                 {product.VIP_Points}
               </p>
-              <img className={`${styles.i}`} onClick={() => this.setVipShown()} onKeyPress={() => this.setVipShown()} src={`${url}/images/i.png`} alt="info" />
+              <img className={styles.i} onClick={() => this.setVipShown()} onKeyPress={() => this.setVipShown()} src={`${url}/images/i.png`} alt="info" />
             </div>
             <p className={`${styles.texttwo}`}>VIP Points</p>
           </div>

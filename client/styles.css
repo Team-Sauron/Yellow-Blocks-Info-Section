@@ -377,3 +377,7 @@ html, body {
 .modalClose {
   text-align: right;
 }
+
+.i {
+  border: white;
+}

@@ -9,7 +9,7 @@ function Modal(props) {
   }
 
   return (
-    <div className={`${styles.infomodal}`}>
+    <div className={styles.infomodal}>
       {children}
     </div>
   );
