@@ -103,6 +103,7 @@ html, body {
 .searchInput {
   background-color: white;
   border: none;
+  width: 75%;
 }
 
 .stat {

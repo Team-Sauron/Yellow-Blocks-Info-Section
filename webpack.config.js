@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports = {
-  mode: 'production',
+  mode: 'development',
   entry: `${path.join(__dirname, '/client/index.jsx')}`,
   output: {
     filename: 'bundle.js',
@@ -18,11 +18,12 @@ module.exports = {
         },
       },
     },
-    {
-      test: /\.css/,
-      loaders: ['style-loader', 'css-loader'],
-      include: `${__dirname}/client/styles.css`,
-    }],
+    // {
+    //   test: /\.css/,
+    //   loaders: ['style-loader', 'css-loader'],
+    //   include: `${__dirname}/client/styles.css`,
+    // }
+    ],
   },
   resolve: { extensions: ['.js', '.jsx', '.css'] },
 };

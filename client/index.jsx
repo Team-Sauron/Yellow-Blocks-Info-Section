@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDom from 'react-dom';
 import Info from './components/info';
+import styles from './styles.css';
 
 const $ = require('jquery');
 
@@ -8,9 +9,9 @@ const url = require('./components/ip');
 
 const { href } = window.location;
 
-const params = new URLSearchParams(href.split('?')[1])
+const params = new URLSearchParams(href.split('?')[1]);
 
-let id = params.get('pid') || 1;
+const id = params.get('pid') || 1;
 
 const settings = {
   url: `${url}/api/info-section/${id}`,
