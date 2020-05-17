@@ -1,5 +1,7 @@
 import React from 'react';
 import Half from './halfStar';
+import styles from '../styles.css';
+
 
 class Stars extends React.Component {
   constructor(props) {
@@ -30,11 +32,12 @@ class Stars extends React.Component {
     rating = [left, right];
 
     return (
-      <div className="stars">
+      <div className={`${styles.stars}`}>
         {rating[0].map((each, idx) => (
-          <div className="star" key={`${product.ID}${idx}`}>
-            <Half className="halfStar" key={`${product.ID}a`} rating={rating[0][idx]} pos={1} />
-            <Half className="halfStar" key={`${product.ID}b`} rating={rating[1][idx]} pos={0} />
+          // eslint-disable-next-line react/no-array-index-key
+          <div className={`${styles.star}`} key={`${product.ID}${idx}`}>
+            <Half className={`${styles.halfStar}`} key={`${product.ID}a`} rating={rating[0][idx]} pos={1} />
+            <Half className={`${styles.halfStar}`} key={`${product.ID}b`} rating={rating[1][idx]} pos={0} />
           </div>
         ))}
       </div>

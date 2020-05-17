@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDom from 'react-dom';
 import Info from './components/info';
-import styles from './styles.css';
 
 const $ = require('jquery');
 
