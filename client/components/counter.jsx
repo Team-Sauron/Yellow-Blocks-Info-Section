@@ -20,14 +20,26 @@ function Counter() {
             {count > 2
               ? (
                 <div className={styles.counterButtonDiv}>
-                  <div onClick={() => updateCount(count - 1)} onKeyPress={() => updateCount(count - 1)} className={styles.counterButton}>-</div>
+                  <div
+                    onClick={() => updateCount(count - 1)}
+                    onKeyPress={() => updateCount(count - 1)}
+                    className={styles.counterButton}
+                  >
+                    -
+                  </div>
                   <div className={styles.counterButtonNumber}>{count}</div>
                   <div className={`${styles.greyed}`.concat(` ${styles.counterButton}`)} type="button">+</div>
                 </div>
               )
               : (
                 <div className={styles.counterButtonDiv}>
-                  <div onClick={() => updateCount(count - 1)} onKeyPress={() => updateCount(count - 1)} className={styles.counterButton}>-</div>
+                  <div
+                    onClick={() => updateCount(count - 1)}
+                    onKeyPress={() => updateCount(count - 1)}
+                    className={styles.counterButton}
+                  >
+                    -
+                  </div>
                   <div className={styles.counterButtonNumber}>{count}</div>
                   <div onClick={() => updateCount(count + 1)} onKeyPress={() => updateCount(count + 1)} className={styles.counterButton} type="button">+</div>
                 </div>
