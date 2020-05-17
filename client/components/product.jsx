@@ -35,7 +35,12 @@ class Product extends React.Component {
 
   closeModals(event) {
     const { product } = this.state;
-    if (!(event.target.className === 'i') && !(event.target.className === 'modal') && !(event.target.className === 'modalTitle') && !(event.target.className === 'modaltexttwo') && !(event.target.className === 'modalBtn') && !(event.target.className === 'modalClose')) {
+    if ((event.target.className !== styles.i)
+    && (event.target.className !== styles.modal)
+    && (event.target.className !== styles.modalTitle)
+    && (event.target.className !== styles.modaltexttwo)
+    && (event.target.className !== styles.modalBtn)
+    && (event.target.className !== styles.modalClose)) {
       this.setState({
         vipShown: false, product, limitShown: false,
       });
@@ -48,132 +53,132 @@ class Product extends React.Component {
     const { vipShown } = this.state;
     return (
       // eslint-disable-next-line jsx-a11y/no-static-element-interactions
-      <div onClick={this.closeModals.bind(this)} onKeyPress={() => this.closeModals.bind(this)} className="container">
-        <div className="legobarthing">
+      <div className={`${styles.container}`} onClick={this.closeModals.bind(this)} onKeyPress={() => this.closeModals.bind(this)}>
+        <div className={styles.legobarthing}>
           <div />
           <img src={`${url}/images/logo.png`} alt="logo" />
           <div />
-          <div className="searchDiv texttwo">
-            <form className="searchForm" onSubmit={(e) => e.preventDefault()}>
-              <input className="searchInput" type="text" placeholder="  Search..." />
+          <div className={`${styles.searchDiv}`.concat(` ${styles.texttwo}}`)}>
+            <form className={styles.searchForm} onSubmit={(e) => e.preventDefault()}>
+              <input className={styles.searchInput} type="text" placeholder="  Search..." />
             </form>
           </div>
           <div />
         </div>
-        <div className="info">
-          <h3 className="brand">{ product.Brand }</h3>
-          <h4 className="title">{ product.Name }</h4>
-          <div className="threecolumnstwo">
+        <div className={styles.info}>
+          <h3 className={styles.brand}>{ product.Brand }</h3>
+          <h4 className={styles.title}>{ product.Name }</h4>
+          <div className={styles.threecolumnstwo}>
             <Stars product={product} />
-            <p className="text">
+            <p className={styles.text}>
               { product.Reviews }
               {' '}
               Reviews
             </p>
-            <p className="text">
+            <p className={styles.text}>
               {' '}
-              <a className="text blue" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Submit Review</a>
+              <a className={`${styles.text}`.concat(` ${styles.blue}`)} href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Submit Review</a>
             </p>
           </div>
           <div>
-            <p className="price">
+            <p className={`${styles.price}`}>
               $
               {product.Price}
               .99
             </p>
             <Buttons />
             {product.Stock > 0
-              ? <p className="green text">Available Now</p>
-              : <p className="red text">Out Of Stock</p>}
-            <div className="text twocolumns counterArea">
+              ? <p className={`${styles.green}`.concat(` ${styles.text}`)}>Available Now</p>
+              : <p className={`${styles.red}`.concat(` ${styles.text}`)}>Out Of Stock</p>}
+            <div className={`${styles.text}`.concat(` ${styles.twocolumns}`).concat(` ${styles.counterArea}`)}>
               <Counter stock={product.Stock} />
               <p> </p>
-              <div className="limit">
-                <p className="limitSpace">Limit 3</p>
+              <div className={`${styles.limit}`}>
+                <p className={`${styles.limitSpace}`}>Limit 3</p>
                 <Modal shown={limitShown}>
-                  <div className="modalClose">
-                    <button onClick={() => this.setLimitShown()} type="button" className="modalBtn texttwo">X</button>
+                  <div className={`${styles.modalClose}`}>
+                    <button onClick={() => this.setLimitShown()} type="button" className={`${styles.modalBtn}`.concat` ${styles.texttwo}`}>X</button>
                   </div>
-                  <h4 className="modalTitle">
+                  <h4 className={`${styles.modalTitle}`}>
                     Limit
                   </h4>
-                  <p className="modaltexttwo">
+                  <p className={`${styles.modaltexttwo}`}>
                     We restrict the limit a household can buy
                     in order to be fair to all of our fans.
                     If you’ve already reached that limit through previous orders,
                     your order may be cancelled.
                   </p>
                 </Modal>
-                <img className="i" onClick={() => this.setLimitShown()} onKeyPress={() => this.setLimitShown()} src={`${url}/images/i.png`} alt="info" />
+                <img className={styles.i} onClick={() => this.setLimitShown()} onKeyPress={() => this.setLimitShown()} src={`${url}/images/i.png`} alt="info" />
               </div>
             </div>
             <div>
-              <button className="bagbutton" type="button">Add To Bag</button>
+              <button className={`${styles.bagbutton}`} type="button">Add To Bag</button>
             </div>
-            <div className="twocolumnsthree selectedButtonDiv spaceForWishList">
+            <div className={`${styles.twocolumnsthree}`.concat(` ${styles.selectedButtonDiv}`).concat(` ${styles.spaceForWishList}`)}>
               <Wishlist />
-              <p className="textincol3 text">
+              <p className={`${styles.textincol3}`.concat(` ${styles.text}`)}>
                 Add to Wishlist
               </p>
             </div>
           </div>
-          <div className="text rmPadding rmMargin">
+          <div className={`${styles.text}`.concat(` ${styles.rmPadding}`).concat(` ${styles.rmMargin}`)}>
             <p>Shop more like this:</p>
             <p>
               {' '}
-              <a className="blue" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">{product.Related}</a>
+              <a className={`${styles.blue}`} href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">{product.Related}</a>
             </p>
           </div>
         </div>
         <div> </div>
-        <div className="stats">
+        <div className={`${styles.stats}`}>
           <div> </div>
-          <div className="stat">
+          <div className={`${styles.stat}`}>
             <img src={`${url}/images/cake.png`} alt="cake" />
-            <p className="statText">
+            <p className={`${styles.statText}`}>
               {product.Ages}
             </p>
-            <p className="texttwo">
+            <p className={`${styles.texttwo}`}>
               Ages
             </p>
           </div>
-          <div className="stat">
+          <div className={`${styles.stat}`}>
             <img src={`${url}/images/lego.png`} alt="peices" />
-            <p className="statText">
+            <p className={`${styles.statText}`}>
               {product.Pieces}
             </p>
-            <p className="texttwo">
+            <p className={`${styles.texttwo}`}>
               Pieces
             </p>
           </div>
-          <div className="stat">
+          <div className={`${styles.stat}`}>
             <Modal shown={vipShown}>
-              <div className="modalClose">
-                <button onClick={() => this.setVipShown()} type="button" className="modalBtn texttwo">X</button>
+              <div className={`${styles.modalClose}`}>
+                <button onClick={() => this.setVipShown()} type="button" className={`${styles.modalBtn}`.concat(` ${styles.texttwo}`)}>X</button>
               </div>
-              <h4 className="modalTitle">
+              <h4 className={`${styles.modalTitle}`}>
                 Vip Points
               </h4>
-              <p className="modaltexttwo">
+              <p className={`${styles.modaltexttwo}`}>
                 The VIP Points value shown is an estimate.
                 The actual points will be calculated when you check out.
               </p>
             </Modal>
             <img src={`${url}/images/crown.png`} alt="points" />
-            <div className="limitTwo">
-              <p className="statText limitSpace">
+            <div className={`${styles.limitTwo}`}>
+              <p className={`${styles.statText}`.concat(` ${styles.limitSpace}`)}>
                 {product.VIP_Points}
               </p>
-              <img className="i" onClick={() => this.setVipShown()} onKeyPress={() => this.setVipShown()} src={`${url}/images/i.png`} alt="info" />
+              <img className={styles.i} onClick={() => this.setVipShown()} onKeyPress={() => this.setVipShown()} src={`${url}/images/i.png`} alt="info" />
             </div>
-            <p className="texttwo">VIP Points</p>
+            <p className={`${styles.texttwo}`}>VIP Points</p>
           </div>
-          <div className="statTwo">
+          <div className={`${styles.statTwo}`}>
             <img src={`${url}/images/hashtag.png`} alt="product ID" />
-            <p className="statText">
+            <p className={`${styles.statText}`}>
               {product.ID}
             </p>
-            <p className="texttwo">
+            <p className={`${styles.texttwo}`}>
               Item
             </p>
           </div>

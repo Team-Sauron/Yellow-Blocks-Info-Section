@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import styles from '../styles.css';
 
 function Buttons() {
   const [selected, setSelected] = useState(0);
@@ -7,15 +8,15 @@ function Buttons() {
     <div>
       {selected === 0
         ? (
-          <div className="twocolumnsfour selectedButtonDiv">
-            <button className="selectedButton buybuttons buttonsInSelect" type="button">Buy Now</button>
-            <button onClick={() => setSelected(Math.abs(selected - 1))} className="buybuttons buttonsInSelect" type="button">Check Store Stock</button>
+          <div className={`${styles.twocolumnsfour}`.concat(` ${styles.selectedButtonDiv}`)}>
+            <button className={`${styles.selectedButton}`.concat(` ${styles.buybuttons}`).concat(` ${styles.buttonsInSelect}`)} type="button">Buy Now</button>
+            <button onClick={() => setSelected(Math.abs(selected - 1))} className={`${styles.buybuttons}`.concat(` ${styles.buttonsInSelect}`)} type="button">Check Store Stock</button>
           </div>
         )
         : (
-          <div className="twocolumnsfour selectedButtonDiv">
-            <button onClick={() => setSelected(Math.abs(selected - 1))} className="buybuttons buttonsInSelect" type="button">Buy Now</button>
-            <button className="selectedButton buybuttons buttonsInSelect" type="button">Check Store Stock</button>
+          <div className={`${styles.twocolumnsfour}`.concat(` ${styles.selectedButtonDiv}`)}>
+            <button onClick={() => setSelected(Math.abs(selected - 1))} className={`${styles.buybuttons}`.concat(` ${styles.buttonsInSelect}`)} type="button">Buy Now</button>
+            <button className={`${styles.selectedButton}`.concat(` ${styles.buybuttons}`).concat(` ${styles.buttonsInSelect}`)} type="button">Check Store Stock</button>
           </div>
         )}
     </div>

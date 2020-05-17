@@ -103,6 +103,7 @@ html, body {
 .searchInput {
   background-color: white;
   border: none;
+  width: 75%;
 }
 
 .stat {
@@ -375,4 +376,8 @@ html, body {
 
 .modalClose {
   text-align: right;
+}
+
+.i {
+  border: white;
 }
