@@ -2,7 +2,7 @@ const faker = require('faker');
 const mongoose = require('mongoose');
 const Product = require('./product');
 
-const mongoDB = 'mongodb://127.0.0.1:27017/smego';
+const mongoDB = 'mongodb://mongo:27017/smego';
 
 // var inserts = {succeeded: 0, failed: 0}
 
