@@ -55,6 +55,7 @@ mongoose.connect(mongoDB, { useNewUrlParser: true, useUnifiedTopology: true }, (
   } else {
     // eslint-disable-next-line no-console
     console.log('connected to mongoose!');
-    genInsert(10000);
+    genInsert(1000);
+    mongoose.connection.close();
   }
 });
